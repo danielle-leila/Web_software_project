@@ -1,0 +1,7 @@
+
+/.idea
+/PhotoAlbum.db
+/.project
+/.pydevproject
+/cmd.bat
+*.pyc
