@@ -1,4 +1,5 @@
 # Django settings for PhotoAlbum project.
+import os
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -100,12 +101,26 @@ TEMPLATE_LOADERS = (
 #     'django.template.loaders.eggs.Loader',
 )
 
+#TODO:rewrite this comment
+# django-openid-auth will *not* work with Django 1.1.1 or older, as it's
+# missing the csrf_token template tag.  This will allow it to work with
+# Django 1.1.2 or later:
+try:
+    import django.middleware.csrf
+except ImportError:
+    csrf_middleware = 'django.contrib.csrf.middleware.CsrfViewMiddleware'
+else:
+    csrf_middleware = 'django.middleware.csrf.CsrfViewMiddleware'
+
+
+
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+        csrf_middleware,
 )
 
 ROOT_URLCONF = 'PhotoAlbum.urls'
@@ -114,6 +129,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    os.path.join(os.path.dirname(__file__), 'templates').replace('\\','/')
 )
 
 INSTALLED_APPS = (
@@ -124,11 +140,35 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'users',
+    'django_openid_auth',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
+
+AUTHENTICATION_BACKENDS = (
+    'django_openid_auth.auth.OpenIDBackend',
+    'django.contrib.auth.backends.ModelBackend',
+)
+# Should users be created when new OpenIDs are used to log in?
+OPENID_CREATE_USERS = True
+
+# When logging in again, should we overwrite user details based on
+# data received via Simple Registration?
+OPENID_UPDATE_DETAILS_FROM_SREG = True
+
+# If set, always use this as the identity URL rather than asking the
+# user.  This only makes sense if it is a server URL.
+OPENID_SSO_SERVER_URL = 'https://login.launchpad.net/'
+
+# Tell django.contrib.auth to use the OpenID signin URLs.
+LOGIN_URL = '/openid/login/'
+LOGIN_REDIRECT_URL = '/'
+
+# Should django_auth_openid be used to sign into the admin interface?
+OPENID_USE_AS_ADMIN_LOGIN = False
+
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
