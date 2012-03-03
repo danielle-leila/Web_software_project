@@ -11,6 +11,6 @@ def index(request):
     #user = User.objects.create_user('user','','user')
     #user = auth.authenticate(username='useru',password='user')
     #if user is not None:
-    return HttpResponse("Correct")
+    return HttpResponse("Correct 7")
     #else:
     #   return HttpResponse('not correct') 
