@@ -6,6 +6,11 @@
 </head>
 <body>
 Login test
-
+{% if is_auth %}
+You are logged in.
+    {% else %}
+    To log in follow this link <br/>
+      <a href="../openid/login">Openid login </a>
+{% endif %}
 </body>
 </html>

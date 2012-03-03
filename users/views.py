@@ -24,18 +24,19 @@ def login2(request):
 
 def login(request):
     s = ['<p>']
-    if request.user.is_authenticated():
-        s.append('You are signed in as <strong>%s</strong> (%s)' % (
-                escape(request.user.username),
-                escape(request.user.get_full_name())))
-        s.append(' | <a href="/logout">Sign out</a>')
-    else:
-        s.append('<a href="/openid/login">Sign in with OpenID</a>')
+    is_auth = request.user.is_authenticated()
 
-    s.append('</p>')
+    #    s.append('You are signed in as <strong>%s</strong> (%s)' % (
+     #           escape(request.user.username),
+     #           escape(request.user.get_full_name())))
+      #  s.append(' | <a href="/logout">Sign out</a>')
 
-    s.append('<p><a href="/private">This requires authentication</a></p>')
-    return HttpResponse('\n'.join(s))
+       # s.append('<a href="/openid/login">Sign in with OpenID</a>')
+
+    #s.append('</p>')
+
+    #s.append('<p><a href="/private">This requires authentication</a></p>')
+    return render_to_response('login.html',{'is_auth':is_auth})
 
 
 def next_works(request):
