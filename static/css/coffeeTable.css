@@ -1,13 +1,42 @@
 
 /** Header **/
 
-.header em {
-  font-size: 70%;
-  color: #FFD700;
-  text-shadow: none;
+.header {
+    background-color: #FFD700;
+    padding: 25px;
+    -moz-border-radius-bottomright: 30px;
+    -moz-border-radius-bottomleft: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    margin-bottom: 30px;    
 }
 
-.page-header {
-    text-shadow: 2px 2px #DCDCDC;
+.header h1 {
+    color: #FFFFFF;
 }
+
+.header em {
+  font-size: 70%;
+  color: #FFFFFF;
+}
+
+/** Header **/
+
+.footer {
+    background-color: #FFD700;
+    color: #FFFFFF;
+    padding: 25px;
+    -moz-border-radius-topright: 30px;
+    -moz-border-radius-topleft: 30px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    
+    
+}
+
+.footer p {
+    text-align: center;
+}
+
+
 
