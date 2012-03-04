@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+   <title>CoffeeTable *enlightened*</title>
+	{% load static %}
+	<link rel="stylesheet" href="{% get_static_prefix %}css/coffeeTable.css" type="text/css" />
+	<link rel="stylesheet" href="{% get_static_prefix %}css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="{% get_static_prefix %}css/bootstrap-responsive.css" type="text/css" />
+	<link rel="stylesheet" href="{% get_static_prefix %}css/reset.css" type="text/css" />
+</head>
+<body>
+	
+	<!-- Main container -->
+	<div class="container">
+		
+		<!-- Header -->
+		{% block header %}
+			<div class="row-fluid">
+				<div class="span12">
+					<div class="header">
+						<h1>CoffeeTable <em>*enlightened*</em></h1>
+					</div>
+				</div>
+			</div>
+		{% endblock %}
+		
+		<!-- Content -->
+		{% block content %}
+		{% endblock %}
+	
+		<!-- Footer -->
+		{% block footer %}
+			<div class="row-fluid">
+				<div class="span12">
+					<div class="footer">
+						<p>&#169; Aalto University 2012</p>
+					</div>
+				</div>
+			</div> <!-- /footer -->
+		{% endblock %}
+	
+	</div> <!-- /container -->
+
+</body>
+</html>
