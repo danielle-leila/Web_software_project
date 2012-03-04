@@ -3,23 +3,31 @@
 
 .header {
     background-color: #FFD700;
-    padding: 25px;
+   
     -moz-border-radius-bottomright: 30px;
     -moz-border-radius-bottomleft: 30px;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
     margin-bottom: 30px;
     border: 1px solid #f1cb00;
+    color: #FFFFFF;
 }
 
 .header h1 {
     color: #FFFFFF;
+    clear: none;
+    padding: 25px;
 }
 
 .header em {
   font-size: 70%;
-  color: #FFFFFF;
 }
+
+.header h3 {
+     padding: 25px;
+     color: #FFFFFF;
+}
+
 
 /** Header **/
 

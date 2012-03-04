@@ -2,17 +2,25 @@
 
 {% block content %}
 	<div class="row-fluid">
-		<div class="span6">
-			<div class="hero-unit">
-  				<h1>Welcome</h1>
-  				<p>to our easy-peasy online photo album generator. <br />
-				Put your feet up, relax, and let us do the rest.</p>
-			</div>
-		</div>
-	
-		<div class="span6">
-			<!-- Insert login section here -->
-		</div>
+		
+		{% if is_auth %}
+
+			<!-- Show user's albums -->
+			<p>You are logged in</p>
+			
+			{% else %}
+				<div class="span6">
+					<div class="hero-unit">
+  						<h1>Welcome</h1>
+  						<p>to our easy-peasy online photo album generator. <br />
+							Put your feet up, relax, and let us do the rest.</p>
+					</div>
+				</div>
+				<div class="span6">
+					<!-- Insert login section here -->
+				</div>
+		{% endif %}
+		
 	</div>
 {% endblock %}
 
