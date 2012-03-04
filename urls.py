@@ -4,7 +4,7 @@ from django.conf.urls.defaults import patterns, include, url
 # from django.contrib import admin
 # admin.autodiscover()
 from django_openid_auth import views
-import users
+import albums
 from django.conf.urls.defaults import *
 from django.contrib import admin
 
@@ -18,11 +18,11 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
-      url(u'^$', 'users.views.index'),
-      (r'^login/$', 'users.views.login'),
+      url(u'^$', 'albums.views.index'),
+      (r'^login/$', 'albums.views.login'),
     # (r'^openid/', include('django_openid_auth.urls')),
     (r'^logout/$', 'django.contrib.auth.views.logout'),
-    (r'^private/$', 'views.require_authentication'),
+    (r'^private/$', 'albums.views.require_authentication'),
 
     #(r'^openid/', include('django_openid_auth.urls')),
    # url(r'^openid/login/$', 'django_openid_auth.views.login_begin', name='openid-login'),

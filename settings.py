@@ -142,7 +142,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'users',
+    'albums',
     'django_openid_auth',
     #'django_openid_auth.views',
     # Uncomment the next line to enable the admin:
