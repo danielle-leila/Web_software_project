@@ -100,6 +100,8 @@ TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
     'django.template.loaders.eggs.Loader',
+   # 'django.template.loaders.filesystem.load_template_source',
+  #  'django.template.loaders.app_directories.load_template_source',
 )
 
 #TODO:rewrite this comment
@@ -124,7 +126,7 @@ MIDDLEWARE_CLASSES = (
         csrf_middleware,
 )
 
-ROOT_URLCONF = 'Web_software_project.urls'
+ROOT_URLCONF = 'urls'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
@@ -142,7 +144,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'users',
     'django_openid_auth',
-    'django_openid_auth.views',
+    #'django_openid_auth.views',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
@@ -166,7 +168,7 @@ OPENID_SSO_SERVER_URL = 'https://login.launchpad.net/'
 
 # Tell django.contrib.auth to use the OpenID signin URLs.
 LOGIN_URL = '/openid/login/'
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/login/'
 
 # Should django_auth_openid be used to sign into the admin interface?
 OPENID_USE_AS_ADMIN_LOGIN = False

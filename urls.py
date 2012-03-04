@@ -24,8 +24,9 @@ urlpatterns = patterns('',
     (r'^logout/$', 'django.contrib.auth.views.logout'),
     (r'^private/$', 'views.require_authentication'),
 
-    url(r'^openid/login/$', 'django_openid_auth.views.login_begin', name='openid-login'),
-    url(r'^openid/complete/$', 'django_openid_auth.views.login_complete', name='openid-complete'),
-    url(r'^openid/logo.gif$', 'django_openid_auth.views.logo', name='openid-logo'),
+    (r'^openid/', include('django_openid_auth.urls')),
+   # url(r'^openid/login/$', 'django_openid_auth.views.login_begin', name='openid-login'),
+  #  url(r'^openid/complete/$', 'django_openid_auth.views.login_complete', name='openid-complete'),
+   # url(r'^openid/logo.gif$', 'django_openid_auth.views.logo', name='openid-logo'),
 
 )

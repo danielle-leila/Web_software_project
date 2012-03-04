@@ -29,8 +29,8 @@
 
 from django.conf.urls.defaults import *
 
-urlpatterns = patterns('views',
-    url(r'^login/$', 'login_begin', name='openid-login'),
-    url(r'^complete/$', 'login_complete', name='openid-complete'),
-    url(r'^logo.gif$', 'logo', name='openid-logo'),
+urlpatterns = patterns('',
+    url(r'^login/$', 'views.login_begin', name='openid-login'),
+    url(r'^complete/$', 'views.login_complete', name='openid-complete'),
+    url(r'^logo.gif$', 'views.logo', name='openid-logo'),
 )
