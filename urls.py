@@ -18,9 +18,9 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
-      url(u'^$', 'albums.views.index'),
+      url(u'^index/$', 'albums.views.index'),
       (r'^login/$', 'albums.views.login'),
-    # (r'^openid/', include('django_openid_auth.urls')),
+     (r'^albums/$', 'albums.views.album_list'),
     (r'^logout/$', 'django.contrib.auth.views.logout'),
     (r'^private/$', 'albums.views.require_authentication'),
 

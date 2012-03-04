@@ -99,7 +99,7 @@ SECRET_KEY = '@we(hhoz*9ijpz)2c35wu4+-v_(=@43wq(g!5mi*e&87if03qo'
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-    'django.template.loaders.eggs.Loader',
+    #'django.template.loaders.eggs.Loader',
    # 'django.template.loaders.filesystem.load_template_source',
   #  'django.template.loaders.app_directories.load_template_source',
 )
@@ -126,7 +126,7 @@ MIDDLEWARE_CLASSES = (
         csrf_middleware,
 )
 
-ROOT_URLCONF = 'urls'
+ROOT_URLCONF = 'PhotoAlbum.urls'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".

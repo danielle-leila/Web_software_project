@@ -1,17 +1,12 @@
 # Create your views here.
-from django.http import HttpResponse
-from django.shortcuts import render_to_response
-from album.models import *
+from albums.models import *
 from django.django.core.urlresolvers import reverse
-from django.contrib import auth
 from django.contrib.auth import authenticate
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import logout_then_login
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template.context import RequestContext
-from django.utils.html import escape
 from django.shortcuts import render_to_response
 from albums.models import Photo
 from models import Album
