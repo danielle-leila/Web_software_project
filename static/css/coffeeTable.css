@@ -1,0 +1,13 @@
+
+/** Header **/
+
+.header em {
+  font-size: 70%;
+  color: #FFD700;
+  text-shadow: none;
+}
+
+.page-header {
+    text-shadow: 2px 2px #DCDCDC;
+}
+

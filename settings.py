@@ -81,6 +81,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    os.path.join(os.path.dirname(__file__), 'static').replace('\\','/'),
 )
 
 # List of finder classes that know how to find static files in
@@ -88,7 +89,7 @@ STATICFILES_DIRS = (
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
 # Make this unique, and don't share it with anybody.
@@ -98,7 +99,7 @@ SECRET_KEY = '@we(hhoz*9ijpz)2c35wu4+-v_(=@43wq(g!5mi*e&87if03qo'
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-#     'django.template.loaders.eggs.Loader',
+    'django.template.loaders.eggs.Loader',
 )
 
 #TODO:rewrite this comment
@@ -123,7 +124,7 @@ MIDDLEWARE_CLASSES = (
         csrf_middleware,
 )
 
-ROOT_URLCONF = 'PhotoAlbum.urls'
+ROOT_URLCONF = 'Web_software_project.urls'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".

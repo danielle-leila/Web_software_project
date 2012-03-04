@@ -1,10 +1,50 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-        "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE html>
+
+<html lang="en">
 <head>
-    <title></title>
+   <title>CoffeeTable *enlightened*</title>
+	{% load static %}
+	<link rel="stylesheet" href="{% get_static_prefix %}css/coffeeTable.css" type="text/css" />
+	<link rel="stylesheet" href="{% get_static_prefix %}css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="{% get_static_prefix %}css/bootstrap-responsive.css" type="text/css" />
 </head>
-<body>This is index html
+<body>
+	
+	<!-- Main container -->
+	<div class="container">
+		
+		<!-- Header -->
+		
+		<div class="header row-fluid">
+			<div class="span12">
+				<h1>CoffeeTable <em>*enlightened*</em></h1>
+			</div>
+		</div>
+		
+		<div class="row-fluid">
+			<div class="span6">
+				<div class="hero-unit">
+		  			<h1>Welcome</h1>
+		  			<p>to our easy-peasy online photo album generator. <br />
+						Put your feet up, relax, and let us do the rest.</p>
+				</div>
+			</div>
+			
+			<div class="span6">
+				<!-- Insert login section here -->
+			</div>
+		</div>
+		
+		
+	
+		<!-- Footer -->
+		<div class="footer">
+			
+			<p>&#169; Aalto University 2012</p>
+			
+		</div> <!-- /footer -->
+	
+	</div> <!-- /container -->
 
 </body>
 </html>
