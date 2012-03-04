@@ -1,4 +1,6 @@
 
+{% load static %}
+
 /** Header **/
 
 .header {
@@ -27,6 +29,28 @@
      padding: 25px;
      color: #FFFFFF;
 }
+
+/** Sign In **/
+
+.openid-btn {
+    margin-top: 20px;
+    width: 150px;
+    height: 22px;
+    background-image: url("../img/openid_signin.png");
+    background-position: 0 0;
+}
+
+.openid-btn:hover {
+    background-position: 0 -24px;
+}
+
+.openid-btn:active {
+    background-position: 0 -48px;
+}
+
+
+
+
 
 /** Header **/
 
