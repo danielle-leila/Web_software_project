@@ -5,8 +5,8 @@
 		
 		{% if is_auth %}
 
-			<!-- Show user's albums -->
-			<p>Congratsulations! You are logged in</p>
+			<!-- Redirect to user's albums (albums.html) -->
+			<p>Congratulations! You are logged in</p>
 			
 			{% else %}
 				<div class="span6">
@@ -33,21 +33,21 @@
 						    <div class="control-group">
 						      <label class="control-label" for="new-username">Choose a username</label>
 						      <div class="controls">
-						        <input type="text" class="input-small" id="new-username">
+						        <input type="text" class="input-small" id="new-username" placeholder="Username">
 						        <!--<p class="help-block">Supporting help text</p>-->
 						      </div>
 						    </div>
 							<div class="control-group">
 						      <label class="control-label" for="new-password">Choose a password</label>
 						      <div class="controls">
-						        <input type="text" class="input-small" id="new-password">
+						        <input type="password" class="input-small" id="new-password" placeholder="New Password">
 						      </div>
 						    </div>
 						
 							<div class="control-group">
 						      <label class="control-label" for="password-again">Repeat your password</label>
 						      <div class="controls">
-						        <input type="text" class="input-small" id="password-again">
+						        <input type="password" class="input-small" id="password-again" placeholder="... again">
 						      </div>
 						    </div>
 						
