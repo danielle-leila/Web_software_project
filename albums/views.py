@@ -58,21 +58,11 @@ def index(request):
 	if request.user.is_authenticated():
 		return HttpResponseRedirect(reverse('login'))
 
-	if request.method == 'POST' and request.POST.get('action') == 'register':
-		regform = UserCreationForm(request.POST)
-		if not regform.is_valid():
-			return render_to_response('index.html', {'regform': regform}, context_instance=RequestContext(request))
-
-		username = regform.cleaned_data['username']
-		password = regform.cleaned_data['password1']
-		regform.save()
-
 		user = authenticate(username=username, password=password)
 		login(request, user)
 		return HttpResponseRedirect(reverse('album_list'))
 
 	return login(request, template_name='index.html')
-   # return render_to_response('index.html')
 
 def album_list(request):
     return render_to_response('albums.html')
@@ -93,17 +83,6 @@ def login2(request):
 def login(request):
     s = ['<p>']
     is_auth = request.user.is_authenticated()
-
-    #    s.append('You are signed in as <strong>%s</strong> (%s)' % (
-     #           escape(request.user.username),
-     #           escape(request.user.get_full_name())))
-      #  s.append(' | <a href="/logout">Sign out</a>')
-
-       # s.append('<a href="/openid/login">Sign in with OpenID</a>')
-
-    #s.append('</p>')
-
-    #s.append('<p><a href="/private">This requires authentication</a></p>')
     return render_to_response('login.html',{'is_auth':is_auth})
 
 
